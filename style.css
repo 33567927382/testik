@@ -1,27 +1,31 @@
+/* ===== Глобальные стили ===== */
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
-  background-color: #1a1a1a; 
+  background-color: #1a1a1a;
   color: #fff;
+  line-height: 1.6;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  background-color: #222; 
-  box-shadow: 0 0 35px rgba(0, 0, 0, 0.6); 
+  background-color: #222;
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.6);
   min-height: 100vh;
   padding: 20px;
+  box-sizing: border-box;
 }
 
+/* ===== Шапка ===== */
+
 .header {
-  background-color: #111;
-  padding: 15px 0;
-  border-bottom: 1px solid #333;
+  height: 145px; ;
+  width: auto;
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 1.25rem; /* 20px */
   font-weight: bold;
   color: #ff6600;
 }
@@ -29,7 +33,8 @@ body {
 .nav a {
   color: #fff;
   text-decoration: none;
-  margin-right: 20px;
+  margin-right: 15px;
+  transition: color 0.3s;
 }
 
 .nav a:hover {
@@ -37,24 +42,149 @@ body {
 }
 
 .search input {
-  padding: 8px;
+  padding: 6px 10px;
+  height: 30px;
+  width: 150px;
   border-radius: 4px;
   border: none;
   background-color: #333;
   color: #fff;
 }
 
-
-.footer {
-  background-color: #111;
-  padding: 20px 0;
-  text-align: center;
-  border-top: 1px solid #333;
+/* ===== Контент ===== */
+.content-block {
+  background-color: #252525;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 25px;
+  border-left: 3px solid #ff6600;
 }
 
-@media (max-width: 768px) {
-  .nav {
-      display: none; 
-  }
+.content-block h2 {
+  color: #ff6600;
+  margin: 0 0 15px 0;
+  font-size: 1.5rem;
+}
 
+.content-block p {
+  margin-bottom: 15px;
+}
+
+.content-photo {
+  width: 100%;
+  border-radius: 4px;
+  margin-top: 15px;
+  display: block;
+}
+
+
+
+
+/* ===== Адаптивность ===== */
+@media (max-width: 768px) {
+  .header {
+    height: auto;
+    padding: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .nav {
+    order: 3;
+    width: 100%;
+    margin-top: 10px;
+    display: none; /* Скрываем на мобильных */
+  }
+  
+  .search {
+    margin-left: auto;
+  }
+  
+  .content-block {
+    padding: 15px;
+  }
+}
+
+/* ===== Утилиты ===== */
+.photo-placeholder {
+  height: 200px;
+  background-color: #333;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-style: italic;
+}
+
+/* Контейнер карточек */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  padding: 20px 0;
+}
+
+/* Стиль карточки */
+.card {
+  background: #252525;
+  border-radius: 10px;
+  padding: 20px;
+  border-left: 4px solid #ff6600;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.card h2 {
+  color: #ff6600;
+  margin: 0 0 15px 0;
+  font-size: 1.5rem;
+}
+
+.card p {
+  margin: 0 0 20px 0;
+  color: #e0e0e0;
+}
+
+/* Кнопка YouTube */
+.yt-btn {
+  display: block;
+  background: #FF0000;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.yt-btn:hover {
+  background: #CC0000;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+}
+
+/* Плейсхолдер для фото */
+.photo-placeholder {
+  height: 180px;
+  background: #333;
+  border-radius: 5px;
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-style: italic;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer {
+height: 145px;
+width: auto;
 }
